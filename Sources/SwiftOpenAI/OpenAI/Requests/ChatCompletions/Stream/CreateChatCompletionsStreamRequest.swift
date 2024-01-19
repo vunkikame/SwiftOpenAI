@@ -44,7 +44,8 @@ final public class CreateChatCompletionsStreamRequest: NSObject, CreateChatCompl
             var urlRequest = api.buildURLRequest(endpoint: endpoint)
             api.addHeaders(urlRequest: &urlRequest,
                            headers: ["Content-Type": "application/json",
-                                     "Authorization": "Bearer \(apiKey)"])
+                                     "Authorization": "Bearer \(apiKey)",
+                                     "Openai-Language": "en"])
 
             dataTask = urlSession?.dataTask(with: urlRequest)
             dataTask?.resume()
